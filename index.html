@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>For Priya ❤️</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, #ff758c, #ff7eb3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Segoe UI', sans-serif;
+      color: white;
+      text-align: center;
+    }
+    .card {
+      background: rgba(0,0,0,0.25);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      max-width: 400px;
+    }
+    h1 {
+      font-size: 42px;
+      margin-bottom: 10px;
+    }
+    p {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+    .heart {
+      font-size: 40px;
+      animation: beat 1s infinite;
+    }
+    @keyframes beat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+    }
+    .open-btn, .choice-btn {
+      margin: 10px;
+      padding: 12px 30px;
+      background: white;
+      color: #ff4f81;
+      border: none;
+      border-radius: 30px;
+      font-size: 16px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Open Me -->
+  <div class="card" id="openCard">
+    <div class="heart">💌</div>
+    <button class="open-btn" onclick="openMessage()">Open Me</button>
+  </div>
+
+  <!-- Valentine Question -->
+  <div class="card hidden" id="messageCard">
+    <div class="heart">❤️</div>
+    <h1>Priya</h1>
+    <p><strong>Will you be my Valentine?</strong></p>
+    <button class="choice-btn" onclick="yesAnswer()">Yes 💕</button>
+    <button class="choice-btn" onclick="noAnswer()">No 😅</button>
+  </div>
+
+  <!-- Yes Response -->
+  <div class="card hidden" id="yesCard">
+    <div class="heart">💖</div>
+    <h1>Yay!</h1>
+    <p>You just made my day 🥰</p>
+  </div>
+
+  <script>
+    function openMessage() {
+      document.getElementById("openCard").style.display = "none";
+      document.getElementById("messageCard").style.display = "block";
+    }
+
+    function yesAnswer() {
+      document.getElementById("messageCard").style.display = "none";
+      document.getElementById("yesCard").style.display = "block";
+    }
+
+    function noAnswer() {
+      alert("Aww 😢 but I still think you're amazing 💕");
+    }
+  </script>
+
+</body>
+</html>
